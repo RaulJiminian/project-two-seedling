@@ -1,6 +1,6 @@
 # **Seedling**
 
-![Paying attention GIF](https://media1.tenor.com/images/c1cfb8847fad1f939b9f9e42b4bf81e8/tenor.gif?itemid=5750963)
+![Paying attention GIF](https://media.giphy.com/media/H83UUEWleFCJa/giphy.gif)
 
 **Seedling** is a web app that focuses on providing information on a vast variety of Flora throughout the world. Using an API powered by [Trefle](http://www.traversymedia.com), we are able to grab whole host of information valuable to understanding and identifying plants. It is this information that we will use to populate the web app and complete the MVP.
 
