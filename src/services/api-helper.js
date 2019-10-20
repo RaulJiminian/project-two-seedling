@@ -1,15 +1,21 @@
 import axios from 'axios';
 
-export const fetchPlants = async function () {
-  let response = await axios('https://cors-anywhere.herokuapp.com/https://trefle.io/api/plants?token=YlBLdzlEYlgwWlhiZG8zRXUreUlIUT09&common_name=daisy');
-  return response;
+export const fetchPaintings = async function () {
+  let response = await axios('https://www.rijksmuseum.nl/api/nl/collection?toppieces=true&imgonly=true&ps=25&p=7&format=jsonp&key=C4kVdX9f');
+  return response.data.ArtObjects;
 }
 
-//API Key: YlBLdzlEYlgwWlhiZG8zRXUreUlIUT09
-//Endpoint to plant by common name below
-//https://trefle.io/api/plants?token=YlBLdzlEYlgwWlhiZG8zRXUreUlIUT09&common_name=daisy
-//interpolate name (daisy) above with user value
+export const fetchProfile = async function (id) {
+  let response = await axios(`https://www.rijksmuseum.nl/api/en/collection/${id}?q=Q&key=C4kVdX9f&format=json`);
+  return response.data.artObject;
+}
 
-//pass id as parameter to full information:
-//https://trefle.io/api/plants/149575?token=YlBLdzlEYlgwWlhiZG8zRXUreUlIUT09
-//interpolate id (149575) above with previous API call
+//API Key: C4kVdX9f
+//First Endpoint; interpolate page number; retrieve ObjectNumber (will pass as ID later), Title, image url, Principal or Maker
+//https://www.rijksmuseum.nl/api/nl/collection?toppieces=true&imgonly=true&ps=50&p=3&format=jsonp&key=C4kVdX9f
+
+//Second Endpoint: interpolate ID (NG-2005-24); will retrieve webImage (url), dating(presentingDate), label (title, makerLine, description), physicalMedium, materials, colors (hex), principalMakers[name, placeOfBirth, dateOfBirth, dateOfDeath), extra button on documentation, iconClassDescription
+//https://www.rijksmuseum.nl/api/en/collection/NG-2005-24?q=Q&key=C4kVdX9f&format=json
+
+//Third Endpoint: Interpolate q= (Andr%C3%A9-Charles%20Boulle) for search parameter
+//https://www.rijksmuseum.nl/api/nl/collection?q=Andr%C3%A9-Charles%20Boulle&key=fpGQTuED&format=json
