@@ -25,30 +25,33 @@ export default class Profile extends React.Component {
 
     if (profile) {
       return (
-        <div>
+        <div className="wrap">
           <div className="profile">
             <img src={profile.webImage.url} alt="painting" />
           </div>
           <div className="profile-two">
-            <h1>Title: {profile.label.title}</h1>
-            <h3>Artist Line: {profile.label.makerLine}</h3>
-            <h3>Physical Medium: {profile.physicalMedium}</h3>
+            <h1>{profile.label.title}</h1>
+            <h3>{profile.label.makerLine}</h3>
+            <br />
+            <h4>Physical Medium: {profile.physicalMedium}</h4>
             <h5>Century Created: {profile.dating.period}th</h5>
             <h5>Creation Date: {profile.dating.presentingDate}</h5>
+            <br />
             <p>{profile.label.description}</p>
-          </div>
-          <div>
-            <h2>Additional Information:</h2>
-            <h3>Artist: {profile.principalMakers[0].name}</h3>
-            <ul>
+            <br />
+            <h2>Artist Information:</h2>
+            <br />
+            <h3>{profile.principalMakers[0].name}</h3>
+            <ul className="tab">
               <li>Nationality: {profile.principalMakers[0].nationality}</li>
               <li>Date of Birth: {profile.principalMakers[0].dateOfBirth}</li>
               <li>Place of Birth: {profile.principalMakers[0].placeOfBirth}</li>
               <li>Date of Death: {profile.principalMakers[0].dateOfDeath}</li>
               <li>Place of Death: {profile.principalMakers[0].placeOfDeath}</li>
             </ul>
+            <br />
             <h3>Class Description:</h3>
-            <ul>
+            <ul className="tab">
               {mapClass.map((value, index) => {
                 return <li key={index}>{value}</li>
               })}

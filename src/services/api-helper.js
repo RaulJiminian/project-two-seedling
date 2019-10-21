@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+
 export const fetchPaintings = async function () {
-  let response = await axios('https://www.rijksmuseum.nl/api/nl/collection?toppieces=true&imgonly=true&ps=25&p=7&format=jsonp&key=C4kVdX9f');
+  const random = Math.ceil(Math.random() * 200)
+  let response = await axios(`https://www.rijksmuseum.nl/api/nl/collection?toppieces=true&imgonly=true&ps=20&p=${random}&format=jsonp&key=C4kVdX9f`);
   return response.data.ArtObjects;
 }
 

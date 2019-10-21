@@ -1,8 +1,188 @@
-div.paintings-list {
-  width: 80%;
-  margin: 0 auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-div.paintings-list img {
-  width: 50%;
+html {
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+}
+
+/* Header Section */
+.header {
+  display: grid;
+  grid-template-columns: 10% 90%;
+  background-color: black;
+  color: whitesmoke;
+  font-size: 2em;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1.2px solid black;
+  padding: 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.header a {
+  text-align: center;
+  margin: 0;
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+/* Painting List w/ Carousel Section */
+div.paintings-list {
+  width: 100%;
+}
+
+div.paintings-list img{
+  height: 400px;
+}
+
+.carousel.carousel-slider {
+  margin: 0 auto 100px auto !important;
+  height: 440px !important;
+  background-color: black;
+}
+
+.carousel .slide .legend{
+  bottom: 5px !important;
+  padding: 0px !important;
+  font-size: 18px !important;
+}
+
+.carousel-status {
+  display: none;
+}
+
+.control-arrow {
+  height: 500px
+}
+
+.paintings-list h1 {
+  line-height: 50px;
+  color: white;
+  font-size: 25px;
+}
+
+/* Button Display */
+#button-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  margin-bottom: 50px;
+  margin-top: 100px;
+  background-color: #ffffff;
+background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+}
+
+.button-content {
+  position: relative;
+  padding: 20px 50px;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+  overflow: hidden;
+  cursor: url('https://i.imgur.com/Sa1z0eM.png?4'), auto;
+}
+
+.button-content span {
+  position: relative;
+  z-index: 1;
+  color: black;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.button-content .liquid {
+  position: absolute;
+  left: 0;
+  top: -80px;
+  width: 200px;
+  height: 200px;
+  background: white;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0,0.5);
+  transition: 0.5s;
+}
+
+.button-content:hover .liquid {
+  top: -120px;
+}
+
+.button-content .liquid:before,
+.button-content .liquid:after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+.button-content .liquid:before {
+  border-radius: 45%;
+  background: rgba(20,20,20,1);
+  animation: animate 5s linear infinite;
+}
+
+.button-content .liquid:after {
+  border-radius: 40%;
+  background: rgba(20,20,20,0.5);
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%,-75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+/* Profile Section */
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 60px auto 50px auto;
+}
+
+.tab {
+  margin-left: 40px;
+}
+
+.profile img {
+  width: 90%;
+}
+
+.profile-two {
+  margin-right: 4%;
+}
+
+/* Footer Section */
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrap {
+    grid-template-columns: 1fr;
+   }
 }
