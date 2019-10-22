@@ -6,27 +6,31 @@ export default class Profile extends React.Component {
     super(props);
     this.state = {
       profile: null,
-      mapClass: []
+      mapClass: [],
+      mapDocumentation: []
     }
   }
 
   componentDidMount = async () => {
-    let profile = await fetchProfile(this.props.id)
-    let mapClass = profile.classification.iconClassDescription
+    let profile = await fetchProfile(this.props.id);
+    let mapClass = profile.classification.iconClassDescription;
+    let mapDocumentation = profile.documentation;
     this.setState({
       profile: profile,
-      mapClass: mapClass
+      mapClass: mapClass,
+      mapDocumentation: mapDocumentation
     })
   }
 
   render() {
     const profile = this.state.profile;
     const mapClass = this.state.mapClass;
+    const mapDocumentation = this.state.mapDocumentation;
 
     if (profile) {
       return (
         <div className="wrap">
-          <div className="profile">
+          <div className="profile img-hover-zoom">
             <img src={profile.webImage.url} alt="painting" />
           </div>
           <div className="profile-two">
@@ -56,6 +60,14 @@ export default class Profile extends React.Component {
                 return <li key={index}>{value}</li>
               })}
             </ul>
+            {/* <section id="myModal" className="modal">
+              <div className="modal-content">
+                <span className="close">&times;</span>
+                {mapDocumentation.map((value, index) => {
+                  return <li className="modalInnerText" key={index}>{value}</li>
+                })}
+              </div>
+            </section> */}
           </div>
         </div>
       )
@@ -68,3 +80,16 @@ export default class Profile extends React.Component {
     }
   }
 }
+
+// modalBtn.addEventListener('click', () => {
+//   modalContent.textContent = `${news[i].content}`;
+//   modal.style.display = "block";
+//   span.onclick = function () {
+//     modal.style.display = "none";
+//   };
+//   window.onclick = function (event) {
+//     if (event.target == modal) {
+//       modal.style.display = "none";
+//     }
+//   };
+// });
