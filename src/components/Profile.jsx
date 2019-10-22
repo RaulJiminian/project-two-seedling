@@ -10,13 +10,15 @@ export default class Profile extends React.Component {
       profile: null,
       mapClass: [],
       mapDocumentation: [],
-      showModal: false
+      showModal: false,
+      showBlur: false
     };
   }
 
   flipModal = e => {
     this.setState(prevState => ({
-      showModal: !prevState.showModal
+      showModal: !prevState.showModal,
+      showBlur: !prevState.showBlur
     }));
   };
 
@@ -40,6 +42,8 @@ export default class Profile extends React.Component {
         {
           profile && (
             <>
+              {(this.state.showBlur ? <div id="blur"></div> : <></>)}
+
               <div className="profile img-hover-zoom">
                 <img src={profile.webImage.url} alt="painting" />
               </div>
@@ -72,9 +76,9 @@ export default class Profile extends React.Component {
                 </ul>
                 <Modal flipModal={this.flipModal} showModal={this.state.showModal} mapDocumentation={this.state.mapDocumentation} />
                 {this.state.mapDocumentation.length && !this.state.showModal && (
-                  <div className="App">
+                  <div>
                     <button
-                      class="toggle-button"
+                      className="toggle-button"
                       id="centered-toggle-button"
                       onClick={this.flipModal}
                     >Documentation</button>
