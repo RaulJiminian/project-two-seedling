@@ -74,7 +74,7 @@ export default class Profile extends React.Component {
                   })}
                 </ul>
                 <Modal flipModal={this.flipModal} showModal={this.state.showModal} mapDocumentation={this.state.mapDocumentation} />
-                {this.state.mapDocumentation.length && !this.state.showModal && (
+                {!!this.state.mapDocumentation.length && !this.state.showModal && (
                   <div>
                     <button
                       className="toggle-button"

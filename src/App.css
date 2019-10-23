@@ -304,6 +304,10 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
     grid-template-columns: 100%;
    }
 
+   .carousel.carousel-slider {
+     width: 90% !important;
+   }
+   
    .legend {
      display: none;
    }
