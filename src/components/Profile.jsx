@@ -1,7 +1,6 @@
 import React from 'react';
 import { fetchProfile } from '../services/api-helper';
 import Modal from '../components/Modal';
-// import "../styles.css";
 
 export default class Profile extends React.Component {
   constructor(props) {

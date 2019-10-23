@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// Powered by Rijksmuseum API pages (http://rijksmuseum.github.io/)
 
 export const fetchPaintings = async function () {
   const random = Math.ceil(Math.random() * 200)

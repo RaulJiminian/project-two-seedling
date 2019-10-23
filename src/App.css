@@ -12,7 +12,7 @@ html {
 /* Header Section */
 .header {
   display: grid;
-  grid-template-columns: 10% 90%;
+  grid-template-columns: 25% 75%;
   background-color: black;
   color: whitesmoke;
   font-size: 2em;
@@ -71,6 +71,7 @@ div.paintings-list img{
 }
 
 /* Button Display */
+/* Thanks to Online Tutorials @ (https://www.youtube.com/watch?v=wjHTKLstbRg) */
 #button-body {
   display: flex;
   justify-content: center;
@@ -173,6 +174,7 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
 }
 
 /* Ken Burn's Effect */
+/* Thanks to Kirupa Chinnathambi @ (https://www.kirupa.com/html5/ken_burns_effect_css.htm) */
 .img-hover-zoom img {
   animation: kenburns 20s infinite;
 }
@@ -298,7 +300,22 @@ background-image: url("https://www.transparenttextures.com/patterns/fabric-of-sq
     grid-template-columns: 1fr;
    }
 
+   .header {
+    grid-template-columns: 100%;
+   }
+
+   .legend {
+     display: none;
+   }
+
+   #centered-toggle-button {
+    margin-bottom: 15px;
+    margin-top: 35px;
+   }
+
    .modal {
      width: 350px;
+     margin-left: -42.5%;
+     margin-top: -35%;
    }
 }

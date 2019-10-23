@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   showArtwork = (id) => {
-    this.props.history.push(`/artwork/${id}`) //may be missing slug component
+    this.props.history.push(`/artwork/${id}`)
   }
 
   render() {
