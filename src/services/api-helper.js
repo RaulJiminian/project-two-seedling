@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const fetchPaintings = async function () {
   const random = Math.ceil(Math.random() * 200)
-  let response = await axios(`https://www.rijksmuseum.nl/api/nl/collection?toppieces=true&imgonly=true&ps=20&p=${random}&format=jsonp&key=C4kVdX9f`);
+  let response = await axios(`https://www.rijksmuseum.nl/api/nl/collection?toppieces=true&imgonly=true&ps=10&p=${random}&format=jsonp&key=C4kVdX9f`);
   return response.data.ArtObjects;
 }
 
